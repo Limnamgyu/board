@@ -5,10 +5,11 @@ var methodOverride = require("method-override");
 var app = express();
 
 // DB setting
-mongoose.connect(process.env.MONGO_DB); // 1
+//mongoose.connect(process.env.MONGO_DB); // 1
+mongoose.connect("mongodb://dbuser:qwer1234@ds129038.mlab.com:29038/boardtest"); // 1
 var db = mongoose.connection;
 db.once("open", function(){
- console.log("DB connected");
+ console.log(process.env.MONGO_DB);
 });
 db.on("error", function(err){
  console.log("DB ERROR : ", err);
