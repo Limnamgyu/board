@@ -9,7 +9,7 @@ mongoose.connect(process.env.MONGO_DB); // 1
 var db = mongoose.connection;
 db.once("open", function(){
  console.log(process.env.MONGO_DB);
-});
+}); 
 db.on("error", function(err){
  console.log("DB ERROR : ", err);
 });

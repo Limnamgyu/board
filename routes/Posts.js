@@ -1,5 +1,5 @@
-var express = require("express");
-var router = expresss.Router();
+var express    = require("express");
+var router = express.Router();
 var Post = require("../models/Post");
 
 router.get("/", function(req, res){
