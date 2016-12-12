@@ -9,7 +9,7 @@ mongoose.connect(process.env.MONGO_DB); // 1
 var db = mongoose.connection;
 db.once("open", function(){
  console.log(process.env.MONGO_DB);
-}); 
+});
 db.on("error", function(err){
  console.log("DB ERROR : ", err);
 });
@@ -24,7 +24,7 @@ app.use(methodOverride("_method"));
 // Routes
 app.use("/", require("./routes/home"));
 app.use("/posts", require("./routes/posts")); // 1
-
+ 
 // Port setting
 app.listen(3000, function(){
  console.log("server on!");
